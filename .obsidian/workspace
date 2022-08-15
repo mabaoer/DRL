@@ -1,0 +1,132 @@
+{
+  "main": {
+    "id": "1a23271b137966f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e2d35a3780e1d6f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "使用强化学习完成井字棋.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1197af417af36940",
+    "type": "split",
+    "children": [
+      {
+        "id": "df4444a6bcf9a953",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e40b9a7d61f3667",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "cb5de5205f12b8e2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "deb36581b2deaead",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b5643aea01f54905",
+    "type": "split",
+    "children": [
+      {
+        "id": "be7523691c1632d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fdd82638ee7bef88",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "使用强化学习完成井字棋.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "dc5b82fc9c596eb1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "使用强化学习完成井字棋.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6d2547702f7346ae",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "541692ab9fd631c6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "使用强化学习完成井字棋.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 124.5
+  },
+  "active": "5e2d35a3780e1d6f",
+  "lastOpenFiles": []
+}
