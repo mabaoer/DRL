@@ -32,7 +32,6 @@ class TicTacToeEnv(gym.Env):
     def step(self, action):
         # 动作的格式：action = {'mark':'circle'/'cross', 'pos':(x,y)}# 产生状态
         self.current_action = action
-        print(action)
         x = action['pos'][0]
         y = action['pos'][1]
         if action['mark'] == 'blue':

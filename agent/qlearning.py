@@ -16,6 +16,7 @@ class QLearning(object):
         self.Q_table = {}
 
     def choose_action(self, state, mark, state_unused):
+        state = state if mark == 'blue' else self.overTurn(state)  # 如果是红方行动则翻转状态
         if str(state) not in self.Q_table:
             self.add_new_state(state, mark, state_unused)
         self.sample_count += 1
@@ -23,7 +24,10 @@ class QLearning(object):
                        math.exp(-1. * self.sample_count / self.epsilon_decay)  # epsilon是会递减的，这里选择指数递减
         # e-greedy 策略
         if np.random.uniform(0, 1) > self.epsilon:
-            action_pos = np.argmax(self.Q_table[str(state)])  # 选择Q(s,a)最大对应的动作
+            # action_idx = np.argmax(self.Q_table[str(state)])  # 选择Q(s,a)最大对应的动作
+            action_pos = max(self.Q_table[str(state)], key=self.Q_table[str(state)].get)
+            print(action_pos)
+            print(self.Q_table[str(state)])
             return {'mark': mark, 'pos': action_pos}
         else:
             return self.random_action(mark, state_unused)
@@ -52,11 +56,10 @@ class QLearning(object):
         return state_
 
     def add_new_state(self, state, mark, state_unused):
-        state = state if mark == 'blue' else self.overTurn(state)  # 如果是红方行动则翻转状态
         if str(state) not in self.Q_table:
             self.Q_table[str(state)] = {}
             for action in state_unused:
-                self.Q_table[str(state)][str(action)] = 0
+                self.Q_table[str(state)][action] = 0
 
     def save(self, path):
         with open(path + 'Q_table_dict.pkl', 'wb') as f:
