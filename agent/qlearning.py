@@ -26,11 +26,14 @@ class QLearning(object):
         if np.random.uniform(0, 1) > self.epsilon:
             # action_idx = np.argmax(self.Q_table[str(state)])  # 选择Q(s,a)最大对应的动作
             action_pos = max(self.Q_table[str(state)], key=self.Q_table[str(state)].get)
-            print(action_pos)
-            print(self.Q_table[str(state)])
             return {'mark': mark, 'pos': action_pos}
         else:
             return self.random_action(mark, state_unused)
+
+    def choose_action_determinate(self, state, mark, state_unused):
+        state = state if mark == 'blue' else self.overTurn(state)  # 如果是红方行动则翻转状态
+        action_pos = max(self.Q_table[str(state)], key=self.Q_table[str(state)].get)
+        return {'mark': mark, 'pos': action_pos}
 
     def random_action(self, mark, state_unused):
         action_pos = random.choice(state_unused)
@@ -40,12 +43,21 @@ class QLearning(object):
         action_pos = np.argmax(self.Q_table[str(state)])
         return {'mark': mark, 'pos': action_pos}
 
-    def update(self, state, action, reward, next_state, done):
+    def update(self, state, action, reward, next_state, done, state_unused, next_state_unused):
+        mark = action['mark']
+        action = (action['pos'][0], action['pos'][1])
+        state = state if mark == 'blue' else self.overTurn(state)  # 如果是红方行动则翻转状态
+        # reward = reward if mark == 'blue' else -reward  # 如果是红方行动则翻转状态
+        if str(state) not in self.Q_table:
+            self.add_new_state(state, mark, state_unused)
+        if str(next_state) not in self.Q_table:
+            mark_ = 'blue' if mark == 'red' else 'red'
+            self.add_new_state(next_state, mark_, next_state_unused)
         Q_predict = self.Q_table[str(state)][action]
         if done:  # 终止状态
             Q_target = reward
         else:
-            Q_target = reward + self.gamma * np.max(self.Q_table[str(next_state)])
+            Q_target = reward + self.gamma * max(self.Q_table[str(next_state)].values())
         self.Q_table[str(state)][action] += self.lr * (Q_target - Q_predict)
 
     def overTurn(self, state):  # 翻转状态

@@ -28,6 +28,7 @@ class TicTacToeEnv(gym.Env):
             self.viewer.geoms.clear()  # 清空画板中需要绘制的元素
             self.viewer.onetime_geoms.clear()
         self.count += 1
+        return self.state
 
     def step(self, action):
         # 动作的格式：action = {'mark':'circle'/'cross', 'pos':(x,y)}# 产生状态
@@ -50,7 +51,7 @@ class TicTacToeEnv(gym.Env):
             reward = 0
         # 报告
         info = {}
-        return self.state, reward, done, info
+        return self.state, reward, done, info, self.state_unused
 
     def judge_end(self):
         res = []

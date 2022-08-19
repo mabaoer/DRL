@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "5e2d35a3780e1d6f",
+        "id": "f2b5c3e1435e2e97",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "RL_tutor.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -57,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 299.5
   },
   "right": {
     "id": "b5643aea01f54905",
@@ -73,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "RL_tutor.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "RL_tutor.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -110,17 +116,23 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "RL_tutor.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 124.5
+    "width": 124.5,
+    "collapsed": true
   },
-  "active": "5e2d35a3780e1d6f",
+  "active": "f2b5c3e1435e2e97",
   "lastOpenFiles": [
+    "未命名.md",
+    "RL_tutor.md",
+    "README.md",
     "使用强化学习完成井字棋.md"
   ]
 }
