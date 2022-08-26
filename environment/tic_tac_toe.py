@@ -45,8 +45,10 @@ class TicTacToeEnv(gym.Env):
         if done:
             if self.winner == 'blue':
                 reward = 1
-            else:
+            elif self.winner == 'red':
                 reward = -1
+            else:
+                reward = 0
         else:
             reward = 0
         # 报告
@@ -67,7 +69,6 @@ class TicTacToeEnv(gym.Env):
             diag2 += self.state[i][self.rows_cols - i - 1]
         res.append(diag1)
         res.append(diag2)
-
         for flag in res:
             if flag == self.rows_cols:
                 self.winner = 'blue'
@@ -75,10 +76,8 @@ class TicTacToeEnv(gym.Env):
             if flag == -self.rows_cols:
                 self.winner = 'red'
                 return True
-
         if len(self.state_unused) == 0:
             return True
-
         return False
 
     def render(self, mode='human'):
